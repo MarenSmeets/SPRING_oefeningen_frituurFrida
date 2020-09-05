@@ -1,0 +1,20 @@
+<nav th:fragment="menu" xmlns:th='http://www.thymeleaf.org'>
+    <ul>
+        <li><a th:href="@{/}">Welkom</a></li>
+        <li><a th:href="@{/sauzen}">Sauzen</a></li>
+        <li><a th:href="@{/taal}">Taal</a></li>
+        <li><a th:href="@{/sauzen/alfabet}">Saus alfabet</a></li>
+        <li><a th:href="@{/snacks/alfabet}">Snack alfabet</a></li>
+        <li><a th:href="@{/snacks/zoekformulier/form}">Zoek snack</a></li>
+        <li><a th:href="@{/zoekDeFriet/zoeken}">Zoek de friet</a></li>
+        <li><a th:href="@{/sauzen/raden}">Raad de saus</a></li>
+        <li><a th:href="@{/gastenboek}">Gastenboek</a></li>
+    </ul>
+</nav>
+
+<head th:fragment="head(title)" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <link rel="icon" th:href="@{/images/frida.ico}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/css/frida.css}">
+    <title th:text="${title}"></title>
+</head>

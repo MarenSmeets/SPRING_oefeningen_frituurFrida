@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Aanpassen')"></head>
+<body>
+
+<script th:src="@{/js/preventDoubleSubmit.js}" defer></script>
+
+<nav th:replace="fragments::menu"></nav>
+
+<h1>Aanpassen</h1>
+
+<form th:object="${snack}" method="post" th:action="@{/snacks}">
+    <input type="hidden" name="id" th:value="*{id}"/>
+    <label>Naam:<span th:errors="*{naam}"></span>
+        <input th:field="*{naam}" autofocus required></label>
+    <label>Prijs:<span th:errors="*{prijs}"></span>
+        <input th:field="*{prijs}" type="number" required step="0.01" min="0"></label>
+
+    <button>Opslaan</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--&lt;!&ndash;    <link rel="icon" href="images/frida.ico" type="image/x-icon">&ndash;&gt;-->
+<!--    <link rel="icon" th:href="@{/images/frida.ico}" type="image/x-icon">-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="css/frida.css">&ndash;&gt;-->
+<!--    <link rel="stylesheet" th:href="@{/css/frida.css}">-->
+<!--    <title>Sauzen</title>-->
+<!--</head>-->
+
+<head th:replace="fragments::head(title='Sauzen')"></head>
+
+<body>
+
+    <nav th:replace="fragments::menu"></nav>
+
+    <h1>Sauzen</h1>
+    <ul th:each="saus:${sauzen}" th:object="${saus}">
+<!--        <li th:text="*{naam}">-->
+<!--            <ul>-->
+<!--                <li th:each="ingredient:*{ingredienten}" th:text="|${ingredient} |"></li>-->
+<!--            </ul>-->
+<!--        </li>-->
+        <li><a th:href="@{/sauzen/{nummer}(nummer=*{nummer})}" th:text="*{naam}"></a></li>
+    </ul>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--&lt;!&ndash;    <link rel="icon" href="images/frida.ico" type="image/x-icon">&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/css/frida.css">&ndash;&gt;-->
+<!--    <link rel="icon" th:href="@{/images/frida.ico}" type="image/x-icon">-->
+<!--    <link rel="stylesheet" th:href="@{/css/frida.css}">-->
+<!--    <title>Home</title>-->
+<!--</head>-->
+
+<head th:replace="fragments::head(title='Home')"></head>
+
+<body>
+
+    <nav th:replace="fragments::menu"></nav>
+
+    <h1>Frituur Frida</h1>
+
+    <h3 th:if="${reedsBezocht}">Welkom terug!</h3>
+
+    <p>Vandaag zijn we <span th:text="${boodschap}"></span> </p>
+
+    <h3>Ons Adres :</h3>
+    <span th:object="${adres}" th:text="|*{straat} *{huisNr} te |"></span>
+    <span th:object="${adres.gemeente}" th:text="|*{postCode} *{naam}|"></span>
+
+
+
+</body>
+</html>
